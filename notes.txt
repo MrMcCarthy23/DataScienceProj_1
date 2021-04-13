@@ -1,0 +1,36 @@
+train a modle to predict the success of a question (the number of clicks and the cost per click) based on the data set.
+
+
+
+DATA MATERIALS:
+	- rank
+	- question string content
+	- global clicks/time
+	- global avg cost per click
+
+WHAT QUESTIONS TO ASK(EDA):
+	- what are the common substrings in the questions
+	- what substrings yield the highest cost per click
+	- is there a correlation between the cost per click and the rank
+	- is there a correlation between the rank and the common substrings
+	- what is the avg "revenue" ( cost per click*(clicks/time))
+	- is there a correlation between the avg revenue and the rank
+	- is there a correlation between question length and rank
+	- what are the trending subjects in the questions 
+	- is there a correlation between the subjects and the cost per click
+	- 
+
+
+HOW TO BUILD THE MODLE:
++PREDICTING THE NUMBER OF CLICKS
+	- this is going to be a linear regression problem
+	- rank all the words in the data set 
+		> based on notes page cs697ak
+			~ now we have a list of keywords ranked by the number of clicks they have recieved
+			~ we can use this as a lable for the individual keywords in a new question
+			~ how do we handle words we have not seen before?
+				+ possibly use clustering to predict the subject of the word and assign an avg weight to the new keyword
+					- find a subject clustering modle on github and see if I can fit it to my needs
+						>
+					- use this modle to break the data set into subjects
+					- 
